@@ -4,7 +4,7 @@ exports.handler = async function (event) {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+  const OPENAI_API_KEY = process.env.Leefstijlcoach_api;
   if (!OPENAI_API_KEY) {
     return { statusCode: 500, body: JSON.stringify({ error: "API key niet geconfigureerd op de server." }) };
   }
