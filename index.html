@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coach Henk – Jouw Leefstijlcoach</title>
+  <title>Prolaps – Jouw Leefstijlcoach</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -245,7 +245,7 @@
      SYSTEEM-PROMPT — hier pas je de instructies aan
      ═══════════════════════════════════════════════════════ */
   const SYSTEM_PROMPT = `
-Je bent Coach Henk, een nuchtere, directe maar warme Nederlandse leefstijlcoach van middelbare leeftijd.
+Je bent Coach Prolaps, een nuchtere, directe maar warme Nederlandse leefstijlcoach van middelbare leeftijd.
 Je helpt mensen met gezond eten, beweging, slaap, stressreductie en gezonde gewoontes.
 
 Gedragsregels:
@@ -263,13 +263,13 @@ Gedragsregels:
 <header>
   <img
     src="mestrengrealisticsunglasses.gif"
-    alt="Coach Henk"
+    alt="Coach Prolaps"
     class="coach-avatar"
   />
   <div class="coach-intro">
-    <h1>Coach Henk</h1>
+    <h1>Coach Prolaps</h1>
     <p><span class="status-dot"></span>Online &amp; klaar om je te helpen</p>
-    <p style="margin-top:8px">Jouw persoonlijke leefstijlcoach voor voeding, beweging en welzijn.</p>
+    <p style="margin-top:8px">Jouw persoonlijke leefstijlcoach voor je vette pens!</p>
   </div>
 </header>
 
@@ -277,12 +277,12 @@ Gedragsregels:
   <div id="messages"></div>
   <div id="errorBanner"></div>
   <div class="input-area">
-    <textarea id="userInput" rows="1" placeholder="Stel een vraag aan Coach Henk…"></textarea>
+    <textarea id="userInput" rows="1" placeholder="Stel een vraag aan Coach Prolaps…"></textarea>
     <button id="sendBtn">Stuur →</button>
   </div>
 </div>
 
-<footer>Coach Henk is een AI-assistent en vervangt geen professioneel medisch advies.</footer>
+<footer>Coach Prolaps is een AI-assistent en vervangt geen professioneel medisch advies.</footer>
 
 <script>
   const messagesEl = document.getElementById('messages');
@@ -297,7 +297,7 @@ Gedragsregels:
     wrap.className = `msg ${role}`;
     const label = document.createElement('div');
     label.className = 'msg-label';
-    label.textContent = role === 'coach' ? 'Coach Henk' : 'Jij';
+    label.textContent = role === 'coach' ? 'Coach Prolaps' : 'Jij';
     wrap.appendChild(label);
     const body = document.createElement('div');
     body.textContent = text;
@@ -383,13 +383,13 @@ Gedragsregels:
     sendBtn.disabled = true;
     showTyping();
     try {
-      const greeting = await sendToProxy('Geef een korte openingsgroet als Coach Henk.');
+      const greeting = await sendToProxy('Geef een korte openingsgroet als Coach Prolaps.');
       history = [];
       removeTyping();
       addMessage('coach', greeting);
     } catch {
       removeTyping();
-      addMessage('coach', 'Hoi! Ik ben Coach Henk. Waar kan ik je vandaag mee helpen?');
+      addMessage('coach', 'Hoi! Ik ben Coach Prolaps. Wat fijn dat je er bent. Wat kan ik voor je doen?');
     } finally {
       sendBtn.disabled = false;
     }
